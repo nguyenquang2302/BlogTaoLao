@@ -30,7 +30,7 @@
   <div class="control-group">
     <div class="controls">
       <button type="submit" class="btn btn-primary">Lưu bài viết</button>
-      <a href="index.php?c=post&m=list; ?>" class="btn btn-primary">Trở lại danh sách</a>
+      <a href="index.php?c=post&m=list" class="btn btn-primary">Trở lại danh sách</a>
     </div>
   </div>
 </form>
