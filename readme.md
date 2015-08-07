@@ -16,5 +16,5 @@
 ###Admin_Thêm_Bài viết mới!!!
 ![](https://github.com/nguyenquang2302/BlogTaoLao/blob/master/Screenshot/admin_newblog.png)
 
-###Admin_Thêm_Bài viết mới!!!
-![](https://github.com/nguyenquang2302/BlogTaoLao/blob/master/Screenshot/admin_newblog.png)
+###Admin_Thêm_Sửa bài viết!!!
+![](https://github.com/nguyenquang2302/BlogTaoLao/blob/master/Screenshot/admin_editblog.png)
