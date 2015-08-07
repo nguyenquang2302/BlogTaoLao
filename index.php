@@ -21,11 +21,17 @@ $method = empty($_GET['m']) ? 'index' : strtolower($_GET['m']);
 
 $c_file = ROOT . DS . 'controllers' . DS . $controller . '.php';
 $m_func = $controller . '_' . $method;
-
+// bắt lỗi khi không tìm thấy function
+function call_uf($fn) {
+    if(is_callable($fn)) {
+        return call_user_func($fn);
+    } else {
+       die("Page not found !");
+    }
+}
 if (is_readable($c_file)) {
     include $c_file;
-    $a=0;
-    call_user_func($m_func,$a);
+    call_uf($m_func);
 } else {
     die("Page not found !");
 }
