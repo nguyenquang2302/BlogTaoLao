@@ -21,7 +21,7 @@
   <div class="control-group">
     <label class="control-label" for="inputcontent" > Nội dung</label>
     <div class="controls">
-      <textarea rows="4" cols="50" name="Content" placeholder="Nội dung" class="ckeditor" ?>" id="ttcontent" >
+      <textarea rows="4" cols="50" name="Content" placeholder="Nội dung" class="ckeditor"  >
       <?php echo $posts[0]['Content'] ?>
       </textarea>
      

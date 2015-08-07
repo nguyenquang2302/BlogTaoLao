@@ -1,5 +1,4 @@
 <h3>Thêm bài viết mới</h3>
-
 <form id="frmpost" class="form-horizontal" method="post" action="">
   <div class="control-group">
     <label class="control-label" for="inputName">Tên tiêu đề: </label>
@@ -18,6 +17,7 @@
     <div class="controls">
     <textarea rows="4" cols="50" name="Content" placeholder="Nội dung" class="ckeditor">
 </textarea>
+</div>
   </div>
   <br/>
   <div class="control-group" >
@@ -27,7 +27,6 @@
     </div>
   </div>
 </form>
-
 <script>
 CKEDITOR.replace('Content');
     $('#frmpost').submit(function() {
