@@ -9,6 +9,25 @@ class Post extends Model
 		 $sql = "SELECT * FROM `{$this->table}`";
 		 return db_get_all($sql);
 	}
+	public function TOPID()
+	{
+		 $sql = "SELECT * FROM `posts` ORDER BY `post_id` desc Limit 1";
+		  $rows = db_get_all($sql);
+        return isset($rows[0]) ? $rows[0] : 1;
+
+	}
+	public function getByTag ($value ,$field = null)
+	{
+		 if ($field === null) {
+            $field = $this->primary_key;
+        }
+         $sql = "SELECT * FROM `{$this->table}` WHERE `{$field}` Like '%" . esc($value)."%'";
+         
+         $rows = db_get_all($sql);      
+
+        return isset($rows) ? $rows : false;
+
+	}
 	public function getBy($value, $field = null) 
 	 {
         if ($field === null) {

@@ -8,12 +8,29 @@
     </div>
     <br>
     <div style="font-weight:bold; font-size: 150%">
-        <?php echo $posts[0]['Tag']; ?>
+        <?php echo $posts[0]['Ucontent']; ?>
     </div>
     </br>
     <div>
         <?php echo $posts[0]['Content']; ?>
     </div>
+    <hr/>
+    <div >
+    <div style="font-weight:bold; font-size: 150%" >
+      Có thể bạn quan tâm?
+    </div>
+    <?php
+       foreach (explode(', ', $posts[0]['Tag']) as $tag)
+       {
+        ?>
+        <div style="float:left"> <a href="/blogtaolao_MVC_/index.php?c=post&m=ListTag&Tag=<?php echo $tag ?>"< > <?php  echo $tag; ?>, &nbsp</a> </div>
+        <?php
+         
+       }
+       
+    ?>
+    </div>
+    </br>
     <hr/>
     <div style="font-weight:bold; font-size: 150%">Thêm Comment</div>
     <hr/>
@@ -58,6 +75,7 @@
      <hr/>
     <?php        
         endforeach;
+        
         if(empty($comments))
         {
     ?>

@@ -9,8 +9,11 @@
         <?php echo $p['Title']; ?>
     </div>
     <br/>
+    <div >
+     <img  style="width:750px; height:400px " src='<?php echo $p['image']; ?>'/>
+    </div>
     <div>
-        <?php echo $p['Tag']; ?>
+        <?php echo $p['Ucontent']; ?>
         <?php
     ?>
          <a href="index.php?c=post&m=Blogdetail&id=<?php echo $p['Post_id'];  ?>" style="font-size: 200%;" >Xem chi tiết</a> 

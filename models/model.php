@@ -17,8 +17,7 @@ class Model {
         }
         
         $sql = "SELECT * FROM `{$this->table}` WHERE `{$field}` = '" . esc($value) . "' LIMIT 1";
-        $rows = db_get_all($sql);
-        
+        $rows = db_get_all($sql);      
         return isset($rows) ? $rows : false;
     }
     

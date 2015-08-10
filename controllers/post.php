@@ -16,6 +16,13 @@ function post_BlogList() {
     $data['template_file'] = 'post/BlogList.php';
     render('layout.php', $data);
 }
+function post_ListTag() {
+    $data = array();
+    $Tag = empty($_GET['Tag']) ? '' : strtolower($_GET['Tag']);
+    $data['posts'] = model('post')->getByTag($Tag,'Tag');
+    $data['template_file'] = 'post/BlogList.php';
+    render('layout.php', $data);
+}
 
 //detail
 function post_BlogDetail()
@@ -58,6 +65,7 @@ function post_list() {
 
 function post_add() {
     $data = array();
+
     if(!isLogged())
     {
     	 redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
@@ -65,8 +73,25 @@ function post_add() {
     if (isPostRequest()) 
     {
         $postData = postData();
-        $currentUser = isLogged();
+        if(is_uploaded_file($_FILES['image']['tmp_name']))
+                {   
+                    $id = model('post')->TopID()['Post_id']+1;
+                    $FileName = $_FILES['image']['name'];
+                    $pos = strrpos($FileName, ".");
+                    $FileExtension = substr($FileName,$pos);
+                    $images = "../BlogTaolao_MVC_/images/image_$id" . $FileExtension;      
+                              
+                    if(move_uploaded_file($_FILES['image']['tmp_name'],$images))
+                    {
+                        $postData['image']=$images;
+                    }     
+                    else
+                    {
+                        $msg="Không thể up hình!!";
+                        abort($msg); 
+                    }
 
+                } 
         if (model('post')->add($postData) )
         {
             redirect('/blogtaolao_MVC_/index.php?c=post&m=list');

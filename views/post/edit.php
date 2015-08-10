@@ -6,15 +6,26 @@
   <div class="control-group">
     <label class="control-label" for="inputName">Tên tiêu đề: </label>
     <div class="controls">
-      
       <input type="text" id="inputTitle" placeholder="Tên tiêu đề" name="Title" style="width:675px"  value="<?php echo $posts[0]['Title'] ?>" />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputImage">Link Hình </label>
+    <div class="controls">
+      <input type="text" id="inputImage" placeholder="Link hình " name="Image"  value="<?php echo $posts[0]['image'] ?>" style="width:675px" />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputTag">Tag </label>
+    <div class="controls">
+      <input type="text" id="inputTag" placeholder="Mỗi tag ngăn cách nhau bởi dấu ',' và khoảng trắng " name="Tag"  value="<?php echo $posts[0]['Tag'] ?>" style="width:675px"  />
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="inputTag" > Tóm tắt  </label>
     <div class="controls">
-    <textarea rows="4" cols="50" name="Tag" placeholder="Tóm tắt" class="ckeditor"  >
-      <?php echo $posts[0]['Content'] ?>
+    <textarea rows="4" cols="50" name="Ucontent" placeholder="Tóm tắt" class="ckeditor"  >
+      <?php echo $posts[0]['Ucontent'] ?>
     </textarea>
     </div>
   </div>

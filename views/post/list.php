@@ -8,6 +8,7 @@
         <th>#</th>
         <th>Tiêu đề</th>
         <th>Tag</th>
+        <th>Tóm tắt</th>
         <th>nội dung</th>
         <th></th>
         <th></th>
@@ -22,7 +23,8 @@
     <tr>
         <td><?php echo $i; ?></td>
         <td><?php echo $p['Title']; ?></td>
-        <td><?php echo $p['Tag']; ?></td>      
+        <td><?php echo $p['Tag']; ?></td>
+        <td><?php echo $p['Ucontent']; ?></td>         
        <td width="50%"><?php echo $p['Content']; ?></td>
           <td><p>
     <a href="index.php?c=comment&m=list&id=<?php echo $p['Post_id']; ?>" class="btn btn-primary">Danh sách comment</a>
@@ -44,11 +46,11 @@
         if ($i):
     ?>
     <tr>
-        <td colspan="7"><strong>end!</strong></td>
+        <td colspan="8"><strong>end!</strong></td>
     </tr>
     <?php else: ?>
     <tr>
-        <td colspan="7" class="text-center"><strong>Chưa có bài viết nào!!!</strong></td>
+        <td colspan="8" class="text-center"><strong>Chưa có bài viết nào!!!</strong></td>
     </tr>
     <?php endif; ?>
 </table>
