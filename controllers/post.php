@@ -121,11 +121,30 @@ function post_edit()
      
     	 $data['posts'] = model('post')->getOneBy($CurrentPost,'Post_id');
 
+    //
         // lưu bài viết đã chỉnh sửa
          if (isPostRequest()) 
         {
             $postData = postData();
-            $currentUser = isLogged();
+             if(is_uploaded_file($_FILES['image']['tmp_name']))
+                {   
+                    $id =$CurrentPost;
+                    $FileName = $_FILES['image']['name'];
+                    $pos = strrpos($FileName, ".");
+                    $FileExtension = substr($FileName,$pos);
+                    $images = "../BlogTaolao_MVC_/images/image_$id" . $FileExtension;      
+                  
+                             
+                    if(move_uploaded_file($_FILES['image']['tmp_name'],$images))
+                    {
+                        $postData['image']=$images;
+                    }     
+                    else
+                    {
+                        $postData['image'] =$postData['image1'];
+                    }
+
+                } 
             if (model('post')->update($postData,$CurrentPost)>=1 )
             {
                 redirect('/blogtaolao_MVC_/index.php?c=post&m=list');

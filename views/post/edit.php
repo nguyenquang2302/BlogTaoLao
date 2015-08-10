@@ -2,7 +2,7 @@
 {
 ?>
 <h3>Sửa bài viết!</h3>
-<form id="frmpost" class="form-horizontal" method="post" action="">
+<form id="frmpost" class="form-horizontal" method="post" action="" enctype="multipart/form-data">
   <div class="control-group">
     <label class="control-label" for="inputName">Tên tiêu đề: </label>
     <div class="controls">
@@ -12,7 +12,8 @@
   <div class="control-group">
     <label class="control-label" for="inputImage">Link Hình </label>
     <div class="controls">
-      <input type="text" id="inputImage" placeholder="Link hình " name="Image"  value="<?php echo $posts[0]['image'] ?>" style="width:675px" />
+      
+      <input type="file" name="image" id="image" />
     </div>
   </div>
   <div class="control-group">
