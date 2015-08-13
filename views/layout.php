@@ -8,6 +8,14 @@
     <script type="text/javascript" src="./styles/js/jquery.js"></script>
     <script  type="text/javascript"  src ="./includes/ckeditor/sample.js"></script>
     <script  type="text/javascript"  src ="./includes/ckeditor/ckeditor.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/Blogtaolao_mvc_/styles/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="/Blogtaolao_mvc_/styles/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="/Blogtaolao_mvc_/styles/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div class='container'>
@@ -18,24 +26,25 @@
             <?php 
             if(isLogged()) 
             {
-                echo '<li class="active" style "text-align:center"  ><a href="index.php?c=post&m=list">Trang quản lý</a></li>';
-                echo '<li class="active" style "text-align:center"  ><a href="index.php?c=auth&m=logout">Đăng xuất</a></li>';
+                echo '<li class="active" style ="text-align:center"  ><a href="index.php?c=post&m=list">Trang quản lý</a></li>';
+                echo '<li class="active" style ="text-align:center"  ><a href="index.php?c=auth&m=logout">Đăng xuất</a></li>';
                 ?>
                 <?php
             }
             else
-                echo '<li class="active" style "text-align:center"  ><a href="index.php?c=auth&m=login">Login</a></li>';
-              ?>
+                echo '<li class="active" style ="text-align:center"  ><a href="index.php?c=auth&m=login">Login</a></li>';
+              ?>            
         </ul>
       </div>
     </div>
     <div id='content' class='row-fluid'>
-        <div class='span9 main'>
-            <?php include ROOT . DS . 'views' . DS . $template_file; ?>
-        </div>
         <div class='span3 sidebar'>
          <?php include ROOT . DS . 'views' . DS . 'blocks' . DS . 'sidebar.php'; ?>
         </div>
+        <div class='span9 main'>
+            <?php include ROOT . DS . 'views' . DS . $template_file; ?>
+        </div>
+        
     </div>
    </div>
 </body>

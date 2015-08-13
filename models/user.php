@@ -20,8 +20,6 @@ class User extends Model {
             return false;
         }
     }
-
-    
     public function authLogout() {
         unset($_SESSION['logged']);
         session_destroy();

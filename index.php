@@ -1,5 +1,6 @@
 <?php
 
+
 // This is Simple MVC for Intership of Phuong Nam Corps
 // Author : KhanhND (khanh.nd A_Cong` phuongnamcorps Cham' com)
 //       _   _   _    ___    _____             ___     ___              ___    _____              _    
@@ -18,20 +19,23 @@ require ROOT . DS . 'includes' . DS . 'common.php';
 
 $controller = empty($_GET['c']) ? 'index' : strtolower($_GET['c']);
 $method = empty($_GET['m']) ? 'index' : strtolower($_GET['m']);
-
 $c_file = ROOT . DS . 'controllers' . DS . $controller . '.php';
 $m_func = $controller . '_' . $method;
 // bắt lỗi khi không tìm thấy function
-function call_uf($fn) {
-    if(is_callable($fn)) {
-        return call_user_func($fn);
-    } else {
-       die("Page not found !");
-    }
+function call_uf($fn) 
+{
+	if(is_callable($fn))
+	 {
+		return call_user_func($fn);
+	}
+	 else 
+	 {
+		die("Page not found !");
+	}
 }
 if (is_readable($c_file)) {
-    include $c_file;
-    call_uf($m_func);
+	include $c_file;
+	call_uf($m_func);
 } else {
-    die("Page not found !");
+	die("Page not found !");
 }

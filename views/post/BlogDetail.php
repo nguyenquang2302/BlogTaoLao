@@ -7,8 +7,8 @@
         <?php echo $posts[0]['Title']; ?>
     </div>
     <br>
-    <div style="font-weight:bold; font-size: 150%">
-        <?php echo $posts[0]['Ucontent']; ?>
+    <div style="font-weight:bold; font-size: 150% ">
+        <p><?php echo $posts[0]['Ucontent']; ?></p>
     </div>
     </br>
     <div>
@@ -23,7 +23,7 @@
        foreach (explode(', ', $posts[0]['Tag']) as $tag)
        {
         ?>
-        <div style="float:left"> <a href="/blogtaolao_MVC_/index.php?c=post&m=ListTag&Tag=<?php echo $tag ?>"< > <?php  echo $tag; ?>, &nbsp</a> </div>
+        <div style="float:left"> <a href="/blogtaolao_MVC_/index.php?c=post&m=ListTag&Tag=<?php echo $tag ?>"< > <?php  echo $tag; ?>, &nbsp</a>   </div>
         <?php
          
        }

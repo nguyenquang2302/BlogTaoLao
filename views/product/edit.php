@@ -1,0 +1,58 @@
+<?php if($products !=null)
+{
+?>
+<h3>sửa sản phẩm !!!</h3>
+<form id="frmpost" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
+  <div>
+    <div class="control-group">
+      <label class="control-label" for="inputName">Tên sản phẩm: </label>
+      <div class="controls">
+        <input type="text" id="inputName" placeholder="Tên sản phẩm" name="product_name" style="width:100%" value="<?php echo $products[0]['product_name']; ?>" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputImage">File Hình </label>
+      <div class="controls">
+        <td> <input type="file" name="product_image" id="product_image" /> </td>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputTag">Giá tiền </label>
+      <div class="controls">
+      <input type="text" id="product_price" placeholder="Nhập số tiền" name="product_price" style="width:100%" value="<?php echo $products[0]['product_price'] ?>" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputUcontent" >Tóm tắt</label>
+      <div class="controls">
+        <textarea rows="4" cols="50" name="product_ucontent" placeholder="Tóm tắt" class="ckeditor"> <?php echo $products[0]['product_ucontent'] ?> </textarea>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="control-group" >
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+      <a href="index.php?c=post&m=list; ?>" class="btn btn-primary">Trở lại danh sách</a>
+    </div>
+  </div>
+</form>
+<script>
+  CKEDITOR.replace('Content');
+  $('#frmpost').submit(function() {
+    if ($('#inputName').val() =="") {
+      if (!alert("Không được để trống Tên sản phẩm")) {
+        $('#inputName').focus();
+        return false;
+      }
+    }
+    if ($('#inputContent').val() =="") {
+      if (!alert("Không được để trống nội dung")) {
+        $('#inputContent').focus();
+        return false;
+      }
+    }
+    return true;
+  });
+</script>
+<?php } ?>

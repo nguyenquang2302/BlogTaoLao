@@ -9,7 +9,12 @@ class Model {
         return db_get_all($sql);
     }
     
-  
+    public function delete ($key)
+    {
+        $where =$this->primary_key."=".$key;
+        return db_delete($this->table,$where);
+
+    }
     //
     public function getOneBy($value, $field = null) {
         if ($field === null) {

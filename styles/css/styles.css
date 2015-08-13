@@ -6,3 +6,82 @@
 .text-center {
     text-align: center !important;
 }
+.table 
+{
+ table-layout: fixed;
+}
+td {
+	word-wrap: break-word;
+}
+.product_box {
+	width: 173px;
+	height: auto;
+	float: left;
+	padding: 10px 10px 10px 11px;
+}
+.top_product_box {
+	width: 173px;
+	height: 12px;
+	background: url(/Blogtaolao_mvc_/images/css/product_box_top.gif) no-repeat bottom;
+}
+.bottom_product_box {
+	
+	width: 173px;
+	height: 10px;
+	background: url(/Blogtaolao_mvc_/images/css/product_box_bottom.gif) no-repeat bottom;
+}
+.center_product_box {
+	width: 173px;
+	height: auto;
+	text-align: center;
+	background: url(/Blogtaolao_mvc_/images/css/product_box_center.gif) repeat-y;
+}
+.product_title {
+	color:red;
+	font-size:17pt;
+	padding: 5px 0;
+	font-weight: bold;
+}
+.product_title a {
+	color: #ea2222;	
+	text-decoration: none;
+}
+.product_title a:hover {
+	color: #00F;	
+}
+.product_image {
+	padding: 5px 0; 
+}
+.product_price {
+	padding: 5px 0;	
+	color: blue;
+	font-size:15pt;
+	font-family:monospace; 
+}
+.product_price span {
+	color:#00C;	
+}
+.produce_details {
+	width: 45px;
+	display: block;
+	float: right;
+	padding: 0 0 0 20px;
+	background:url(/Blogtaolao_mvc_/images/css/square-blue-add.gif) no-repeat left;
+	margin: 0px 5px 0 38px;
+	text-decoration: none;
+	color:#06C;
+}
+p
+{
+	WORD-BREAK: break-word;
+}
+.center_title_bar {
+	width: 83%;
+	height: 33px;
+	background:#F5F5F5;
+	padding: 0 0 0 40px;
+	line-height: 33px;
+	margin-left: 12px;
+	font-weight: bold;
+	border-radius:0 10px 10px 0px;
+	}

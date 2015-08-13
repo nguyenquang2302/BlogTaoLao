@@ -6,7 +6,7 @@
   <div class="control-group">
     <label class="control-label" for="inputName">Tên tiêu đề: </label>
     <div class="controls">
-      <input type="text" id="inputTitle" placeholder="Tên tiêu đề" name="Title" style="width:675px"  value="<?php echo $posts[0]['Title'] ?>" />
+      <input type="text" id="inputTitle" placeholder="Tên tiêu đề" name="Title" style="width:100%"  value="<?php echo $posts[0]['Title'] ?>" />
     </div>
   </div>
   <div class="control-group">
@@ -19,7 +19,7 @@
   <div class="control-group">
     <label class="control-label" for="inputTag">Tag </label>
     <div class="controls">
-      <input type="text" id="inputTag" placeholder="Mỗi tag ngăn cách nhau bởi dấu ',' và khoảng trắng " name="Tag"  value="<?php echo $posts[0]['Tag'] ?>" style="width:675px"  />
+      <input type="text" id="inputTag" placeholder="Mỗi tag ngăn cách nhau bởi dấu ',' và khoảng trắng " name="Tag"  value="<?php echo $posts[0]['Tag'] ?>" style="width:100%"  />
     </div>
   </div>
   <div class="control-group">
