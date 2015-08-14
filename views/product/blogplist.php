@@ -22,9 +22,9 @@
           <?php
         }  
         ?>  
-        <div class="product_title"  ><a href="#" title="<?php echo $p['product_name']?>">   <?php echo substr($p['product_name'],0,10) ?> <?php if ( strlen($p['product_name']) >10) {  ?> ...<?php } ?></a></div>
-        <div class="product_image">  <img style="width:80%" src="<?php echo $p['product_image'] ?>" ></div>
-        <div class="product_price"> Giá:<?php echo $p['product_price'] ?></div>
+        <div class="product_title"  ><a href="#" title="<?php echo $p['product_name']?>">   <?php echo substr($p['product_name'],0,12) ?> <?php if ( strlen($p['product_name']) >10) {  ?> ...<?php } ?></a></div>
+        <div class="product_image" style="width:100%;height:80pt">  <img style="width:80%;height:80pt" src="<?php echo $p['product_image'] ?>" ></div>
+        <div class="product_price"> Giá :<?php echo $p['product_price'] ?> <br>VNĐ</div>
         <input title="Thêm vào Giỏ Hàng" name="imageField" id="cart_click" onclick="abc(<?php echo $p['product_id']; ?>);" type="image" img src="/Blogtaolao_mvc_/images/css/cart.gif" align="center" />       
         <a href="" type="button" onclick="detail(<?php echo $p['product_id'];?>)" class="produce_details" data-toggle="modal" data-target="#myModal">Chi tiết
         </a>
