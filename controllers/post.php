@@ -106,9 +106,7 @@ function post_edit()
     abort($msg); 
 
 }
-
 $data['posts'] = model('post')->getOneBy($CurrentPost,'Post_id');
-
     //
         // lưu bài viết đã chỉnh sửa
 if (isPostRequest()) 
@@ -131,7 +129,6 @@ if (isPostRequest())
         {
             $postData['image'] =$postData['image1'];
         }
-
     } 
     if (model('post')->update($postData,$CurrentPost)>=1 )
     {

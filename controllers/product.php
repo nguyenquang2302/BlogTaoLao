@@ -17,6 +17,17 @@ function product_blogplist()
 	$data['template_file'] = 'product/blogplist.php';
 	render('layout.php', $data);
 }
+function product_detail()
+{
+	$data['products'] = array();
+	if(isset($_GET['number']))
+	{
+		$key =$_GET['number'];
+	    $data['products'] = model('product')->getOneBy($key);
+		$data['template_file'] = 'product/detail.php';
+		render('product/detail.php', $data);
+	}
+}
 function product_cart()
 {
 	$data['products'] = array();

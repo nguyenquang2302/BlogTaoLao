@@ -5,11 +5,26 @@
 session_start();
 // Thiết lập font chữ UTF8 để khỏi bị lỗi font
 // Kiểm tra có dữ liệu không
-$number = isset($_GET['number']) ? (int)$_GET['number'] : "clear";
-if($number == "clear")
+
+$number = isset($_GET['number']) ? $_GET['number'] : "clearall";
+if($number == "clearall")
 {
   echo ' Giỏ hàng có :[ 0 ] sản phẩm';
+  unset($_SESSION['cart']);
   die();
+}
+if($number == "clear")
+{
+  if(empty($_SESSION['logged']))
+  {
+    echo ' Giỏ hàng có :[ '.count($_SESSION['cart']).' ]'.' sản phẩm';
+    die();
+  }
+  else
+  {
+    echo ' Giỏ hàng có :[ 0 ] sản phẩm';
+    die();
+  }
 }
 $number = isset($_GET['number']) ? (int)$_GET['number'] : false;
 
