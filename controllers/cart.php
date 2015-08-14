@@ -71,7 +71,6 @@ function cart_Ulist()
 	$data['template_file'] = 'cart\Ucartlist.php';
 	render('layout.php', $data);
 }
-
 function cart_list()
 {
 	$data = array();
