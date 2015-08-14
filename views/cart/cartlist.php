@@ -1,7 +1,5 @@
-<h3>Quản lí sản phẩm </h3>
-<p>
-    <a href="index.php?c=product&m=add" class="btn btn-primary">Thêm sản phẩm</a>
-</p>
+<h3>Quản lí  các đơn đặt hàng</h3>
+
 <table class="table table-bordered">
     <tr>
         <th>#</th>
@@ -10,7 +8,7 @@
         <th>Tình trạng</th>
         <th>Ngày đặt</th>
         <th>Chi tiết</th>
-        <th></th>
+        <th width="15%"></th>
         <th></th>
     </tr>
     <?php
@@ -31,7 +29,6 @@
             </button>
              <div class="modal fade" style="clear:both" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-
       <div class="mod">
         <button type="button"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Chi tiết giỏ hàng của khách hàng </h4>
@@ -41,20 +38,20 @@
       </div>
       </div>
         </td>
-        <td > <input class="btn btn-danger btn-lg" type="button" value="Thanh toán" /></td>
-         <td style=" text-align:center"> <input class="btn btn-danger btn-lg" type="button" value="Xóa" /></td>
+        <td style=" text-align:center"> <a onclick="return confirm('Bạn có chắc chắn muốn xác nhận thanh toán ?');" href="index.php?c=cart&m=delivery&id=<?php echo $c['cart_id'] ?>" class="btn btn-danger btn-lg" type="button">Thanh toán </a></td>
+         <td style=" text-align:center"> <a  onclick="return confirm('Bạn có chắc chắn muốn xóa giỏ hàng ?');" href="index.php?c=cart&m=delete&id=<?php echo $c['cart_id'] ?>" class="btn btn-danger btn-lg" type="button">Xóa </a></td>
     </tr>
     <?php        
         endforeach;
         if ($i):
     ?>
     <tr>
-        <td colspan="7"><strong>end!</strong></td>
+        <td colspan="8"><strong>end!</strong></td>
         
     </tr>
     <?php else: ?>
     <tr>
-        <td colspan="7" class="text-center"><strong> Chưa có sản phẩm nào được rao bán :v</strong></td>
+        <td colspan="8" class="text-center"><strong> Chưa có đơn đặt hàng nào :v</strong></td>
     </tr>
     <?php endif; ?>
 </table>
@@ -72,7 +69,6 @@
                     success : function (result){
                         $('#gh').html(result);
                     }
-
                 });
             }
 </script>

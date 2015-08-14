@@ -1,3 +1,4 @@
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php
 function abort($msg)
 {
@@ -54,15 +55,7 @@ function post_BlogDetail()
 // admin
 function post_list() {
     $data = array();
-    if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+      checkaut();
      $data['posts'] = model('post')->getAll();
      $data['template_file'] = 'post/list.php';
      render('layout.php', $data);
@@ -70,15 +63,7 @@ function post_list() {
 
 function post_add() {
     $data = array();
-    if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+    checkaut();
   if (isPostRequest()) 
   {
     $postData = postData();
@@ -89,7 +74,6 @@ function post_add() {
         $pos = strrpos($FileName, ".");
         $FileExtension = substr($FileName,$pos);
         $images = "../BlogTaolao_MVC_/images/image_$id" . $FileExtension;      
-
         if(move_uploaded_file($_FILES['image']['tmp_name'],$images))
         {
             $postData['image']=$images;
@@ -99,12 +83,10 @@ function post_add() {
             $msg="Không thể up hình!!";
             abort($msg); 
         }
-
     } 
     if (model('post')->add($postData) )
     {
-        redirect('/blogtaolao_MVC_/index.php?c=post&m=list');
-        
+        redirect('/blogtaolao_MVC_/index.php?c=post&m=list');   
     }
 }
 $data['template_file'] = 'post/add.php';
@@ -115,15 +97,7 @@ function post_edit()
 {
 	$data = array();
 	// kiểm tra login
-  if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+    checkaut();
     // bắt dữ id bài viết cần chỉnh sửa
   $CurrentPost = empty($_GET['id']) ? null : strtolower($_GET['id']);
   if(!model('post')->check_true($CurrentPost,'Post_id'))
@@ -171,15 +145,7 @@ function post_delete()
 {
     $data = array();
     // kiểm tra login
-   if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+  checkaut();
     // bắt dữ id bài viết cần chỉnh sửa
  $CurrentPost = empty($_GET['id']) ? null : strtolower($_GET['id']);
     // kiểm tra xem bài viết có tồn tại không!

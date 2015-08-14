@@ -15,8 +15,10 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(__FILE__));
 
-require ROOT . DS . 'includes' . DS . 'common.php';
+?>
 
+<?php
+require ROOT . DS . 'includes' . DS . 'common.php';
 $controller = empty($_GET['c']) ? 'index' : strtolower($_GET['c']);
 $method = empty($_GET['m']) ? 'index' : strtolower($_GET['m']);
 $c_file = ROOT . DS . 'controllers' . DS . $controller . '.php';

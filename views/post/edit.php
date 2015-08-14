@@ -6,14 +6,14 @@
   <div class="control-group">
     <label class="control-label" for="inputName">Tên tiêu đề: </label>
     <div class="controls">
-      <input type="text" id="inputTitle" placeholder="Tên tiêu đề" name="Title" style="width:100%"  value="<?php echo $posts[0]['Title'] ?>" />
+      <input type="text" required id="inputTitle" placeholder="Tên tiêu đề" name="Title" style="width:100%"  value="<?php echo $posts[0]['Title'] ?>" />
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="inputImage">Link Hình </label>
+    <label class="control-label" for="inputImage">File Hình </label>
     <div class="controls">
       
-      <input type="file" name="image" id="image" />
+      <input type="file"  name="image" id="image" />
     </div>
   </div>
   <div class="control-group">
@@ -23,9 +23,9 @@
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="inputTag" > Tóm tắt  </label>
+    <label class="control-label" required for="inputTag" > Tóm tắt  </label>
     <div class="controls">
-    <textarea rows="4" cols="50" name="Ucontent" placeholder="Tóm tắt" class="ckeditor"  >
+    <textarea rows="4" cols="50" required name="Ucontent" placeholder="Tóm tắt" class="ckeditor"  >
       <?php echo $posts[0]['Ucontent'] ?>
     </textarea>
     </div>
@@ -33,7 +33,7 @@
   <div class="control-group">
     <label class="control-label" for="inputcontent" > Nội dung</label>
     <div class="controls">
-      <textarea rows="4" cols="50" name="Content" placeholder="Nội dung" class="ckeditor"  >
+      <textarea rows="4" cols="50" required name="Content" placeholder="Nội dung" class="ckeditor"  >
       <?php echo $posts[0]['Content'] ?>
       </textarea>
      

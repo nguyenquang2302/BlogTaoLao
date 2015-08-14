@@ -49,11 +49,12 @@ class Post extends Model
 
 	 	return db_update($this->table, $postData,$where);
 	 }
-	 public function delete ($key)
-	 {
-	 	$where =$this->primary_key."=".$key;
-	 	return db_delete($this->table,$where);
+	  public function delete ($key)
+    {
+        $where =$this->primary_key."=".$key;
+        return db_delete($this->table,$where);
 
-	 }
+    }
+	
 }
 ?>

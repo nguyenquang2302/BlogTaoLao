@@ -22,14 +22,11 @@ class comment extends Model
 
 		return isset($rows) ? $rows : false;
 	}
-	public function delete ($key)
-	{
-		$where =$this->primary_key."=".$key;
-		return db_delete($this->table,$where);
-	}
+
 	public function add($postData)
 	{
 		return db_insert($this->table, $postData);
 	}
+	
 }
 ?>

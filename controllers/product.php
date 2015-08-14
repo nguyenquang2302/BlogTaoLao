@@ -1,3 +1,4 @@
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php
 function abort($msg)
 {
@@ -26,15 +27,7 @@ function product_cart()
 function product_add()
 {
 	$data = array();
-	if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+	checkaut();
 // kiểm tra login
 	if (isPostRequest()) 
 	{
@@ -83,15 +76,7 @@ function product_list()
 
 	$data = array();
 //kiểm tra login -> pq admin
-	if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+    checkaut();
 	$data['products'] = model('product')->All();
 	$data['template_file'] = 'product/list.php';
 	render('layout.php', $data);
@@ -100,15 +85,7 @@ function product_edit()
 {
 	$data = array();
 // kiểm tra login
-	if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+	checkaut();
 // bắt dữ id bài viết cần chỉnh sửa
 //
 	$Currentproduct = empty($_GET['id']) ? null : strtolower($_GET['id']);
@@ -161,15 +138,7 @@ function product_delete()
 {
 	$data = array();
 // kiểm tra login
-	if(!isLogged())
-      {
-          redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
-      $aut=$_SESSION['logged']['aut'];
-      if($aut !="admin")
-      {
-        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
-      }
+	checkaut();
 // bắt dữ id bài viết cần chỉnh sửa
 	$Currentproduct = empty($_GET['id']) ? null : strtolower($_GET['id']);
 	if(!model('product')->check_true($Currentproduct,'product_id'))

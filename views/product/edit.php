@@ -5,9 +5,9 @@
 <form id="frmpost" class="form-horizontal" method="post" action="" enctype="multipart/form-data" >
   <div>
     <div class="control-group">
-      <label class="control-label" for="inputName">Tên sản phẩm: </label>
+      <label class="control-label" for="inputName" >Tên sản phẩm: </label>
       <div class="controls">
-        <input type="text" id="inputName" placeholder="Tên sản phẩm" name="product_name" style="width:100%" value="<?php echo $products[0]['product_name']; ?>" />
+        <input type="text" id="inputName" required placeholder="Tên sản phẩm" name="product_name" style="width:100%" value="<?php echo $products[0]['product_name']; ?>" />
       </div>
     </div>
     <div class="control-group">
@@ -17,9 +17,9 @@
       </div>
     </div>
     <div class="control-group">
-      <label class="control-label" for="inputTag">Giá tiền </label>
+      <label class="control-label"  for="inputTag">Giá tiền </label>
       <div class="controls">
-      <input type="text" id="product_price" placeholder="Nhập số tiền" name="product_price" style="width:100%" value="<?php echo $products[0]['product_price'] ?>" />
+      <input type="number" required id="product_price" placeholder="Nhập số tiền" name="product_price" style="width:100%" value="<?php echo $products[0]['product_price'] ?>" />
       </div>
     </div>
     <div class="control-group">

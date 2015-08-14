@@ -11,7 +11,7 @@ class Model {
     
     public function delete ($key)
     {
-        $where =$this->primary_key."=".$key;
+        $where = "`".$this->primary_key."` =".$key;
         return db_delete($this->table,$where);
 
     }

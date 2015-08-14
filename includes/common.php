@@ -9,8 +9,7 @@ function model($model) {
     static $models = array();
     $model = strtolower($model);
     if (!isset($models[$model])) {
-        include ROOT . DS . 'models' . DS . $model . '.php';
-        
+        include ROOT . DS . 'models' . DS . $model . '.php';    
         $model_name = ucfirst($model);
         $models[$model] = new $model_name();
     }
@@ -18,6 +17,20 @@ function model($model) {
     return $models[$model];
 }
 
+function checkaut()
+{
+    if(!isLogged())
+      {
+        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
+      }
+      $aut=$_SESSION['logged']['aut'];
+
+      if($aut !="admin")
+      {
+        redirect('/blogtaolao_MVC_/index.php?c=auth&m=login');
+      }
+      return true;
+}
 function isLogged() {
     if (empty($_SESSION['logged'])) {
         return false;

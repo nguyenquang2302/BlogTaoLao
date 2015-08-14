@@ -85,3 +85,19 @@ p
 	font-weight: bold;
 	border-radius:0 10px 10px 0px;
 	}
+
+.li{ list-style: none; background: #111111; width: auto;}
+a:hover{color:red !important}
+.clear{ clear: both;}
+.wrapper1{ width: auto; height: auto; background: #111111; margin: 0px auto; color: white}
+.main_menu{ background: #00A69B; margin-top: 1% }
+.main_menu>ul>li{ float: left;padding: 11px 0%; position: relative; border-right: 2px dotted #ACACAC;}
+.main_menu>ul>li:last-child{ border-right: none;}
+.main_menu>ul>li>a{text-decoration: none;color: white !important;font-size: 16px;}
+.main_menu>ul>li>ul{ display: none; position: absolute; background: #111111;top: 100%;width: 100%; left: -14%;}
+.main_menu>ul>li:hover ul{ display: block;}
+.main_menu>ul>li>a:hover{text-decoration: none;color:red !important;font-size: 16px;}
+.main_menu>ul>li>ul>li{ padding: 5px 10px;}
+.main_menu>ul>li>ul>li{ border-bottom: 1px dotted #ACACAC;}
+.main_menu>ul>li>ul>li>a{text-decoration: none;color: white !important;font-size: 16px;}
+.main_menu>ul>li>ul>li>a:hover{text-decoration: none;color:red !important;font-size: 16px;}

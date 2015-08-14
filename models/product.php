@@ -18,7 +18,7 @@ class product extends Model
 	public function update($postData,$key)
 	{
 	 	$where ="product_id=".$key;
-
 	 	return db_update($this->table, $postData,$where);
 	}
+	
 }
