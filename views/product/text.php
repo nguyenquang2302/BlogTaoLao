@@ -17,14 +17,19 @@ if($number == "clear")
 {
   if(empty($_SESSION['logged']))
   {
+    if (!empty($_SESSION['cart']))
+    {
     echo ' Giỏ hàng có :[ '.count($_SESSION['cart']).' ]'.' sản phẩm';
     die();
+    }
+    else
+    {
+      echo ' Giỏ hàng có :[ 0 ] sản phẩm';
+      die();
+    }
   }
-  else
-  {
-    echo ' Giỏ hàng có :[ 0 ] sản phẩm';
-    die();
-  }
+  echo ' Giỏ hàng có :[ 0 ] sản phẩm';
+  die();
 }
 $number = isset($_GET['number']) ? (int)$_GET['number'] : false;
 
